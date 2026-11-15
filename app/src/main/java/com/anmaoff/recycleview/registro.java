@@ -37,24 +37,24 @@ public class registro extends AppCompatActivity {
         btnGuardar = findViewById(R.id.btnGuardar);
 
         btnGuardar.setOnClickListener(new View.OnClickListener() {
-                                          @Override
-                                          public void onClick(View v) {
+            @Override
+            public void onClick(View v) {
 
-                                              Conexion conexion = new Conexion( registro.this);
-                                              producto producto = new producto();
+                Conexion conexion = new Conexion( registro.this);
+                producto producto = new producto();
 
-                                              producto.setClave(Integer.parseInt(txtClave.getText().toString().trim()));
-                                              producto.setCantidad(Integer.parseInt(txtCantidad.getText().toString().trim()));
-                                              producto.setPrecio(Double.parseDouble(txtPrecio.getText().toString().trim()));
-                                              producto.setName(txtName.getText().toString().trim());
-                                              producto.setCategoria(txtCategoria.getText().toString().trim());
-                                              producto.setDescripcion(txtDescripcion.getText().toString().trim());
-                                              producto.setResponsable(txtResponsable.getText().toString().trim());
+                producto.setClave(Integer.parseInt(txtClave.getText().toString().trim()));
+                producto.setCantidad(Integer.parseInt(txtCantidad.getText().toString().trim()));
+                producto.setPrecio(Double.parseDouble(txtPrecio.getText().toString().trim()));
+                producto.setName(txtName.getText().toString().trim());
+                producto.setCategoria(txtCategoria.getText().toString().trim());
+                producto.setDescripcion(txtDescripcion.getText().toString().trim());
+                producto.setResponsable(txtResponsable.getText().toString().trim());
 
-                                              conexion.agregar(producto);
+                conexion.agregar(producto);
 
-                                              Intent intent = new Intent(registro.this, MainActivity.class);
-                                              startActivity(intent);
+                Intent intent = new Intent(registro.this, MainActivity.class);
+                startActivity(intent);
 
 
                                           }

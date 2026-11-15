@@ -2,6 +2,7 @@ package com.anmaoff.recycleview.modelo;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -48,6 +49,22 @@ public class Conexion extends SQLiteOpenHelper {
         values.put("Responsable", producto.getResponsable());
 
         db.insert("registro", null, values);
+
+    }
+
+    public Cursor consultar() {
+
+        String query = "Select * from registro";
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+
+        if (cursor == null) {
+            cursor = db.rawQuery(query, null);
+
+        }
+
+        return cursor;
 
     }
 
