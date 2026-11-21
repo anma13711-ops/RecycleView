@@ -27,14 +27,14 @@ public class registro extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_registro);
 
-        txtClave = findViewById(R.id.txtClave);
-        txtCantidad = findViewById(R.id.txtCantidad);
-        txtPrecio = findViewById(R.id.txtPrecio);
-        txtName = findViewById(R.id.txtName);
-        txtCategoria = findViewById(R.id.txtCategoria);
-        txtDescripcion = findViewById(R.id.txtDescripcion);
-        txtResponsable = findViewById(R.id.txtResponsable);
-        btnGuardar = findViewById(R.id.btnGuardar);
+        txtClave = findViewById(R.id.txtClave2);
+        txtCantidad = findViewById(R.id.txtCantidad2);
+        txtPrecio = findViewById(R.id.txtPrecio2);
+        txtName = findViewById(R.id.txtName2);
+        txtCategoria = findViewById(R.id.txtCategoria2);
+        txtDescripcion = findViewById(R.id.txtDescripcion2);
+        txtResponsable = findViewById(R.id.txtResponsable2);
+        btnGuardar = findViewById(R.id.btnActualizar);
 
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override

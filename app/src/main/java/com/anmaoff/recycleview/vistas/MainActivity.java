@@ -69,16 +69,9 @@ public class MainActivity extends AppCompatActivity {
         Descripcion = new ArrayList<String>();
         Responsable = new ArrayList<String>();
 
+
         nombre = new ArrayList<String>();
-        nombre.add("Fernanda");
-        nombre.add("Guadalupe");
-        nombre.add("Angel");
-        nombre.add("Manuel");
         telefonos = new ArrayList<String>();
-        telefonos.add("1111111111");
-        telefonos.add("2222222222");
-        telefonos.add("3333333333");
-        telefonos.add("4444444444");
 
         int[] imagenes = {R.drawable.a1, R.drawable.a2, R.drawable.a3, R.drawable.a4};
 

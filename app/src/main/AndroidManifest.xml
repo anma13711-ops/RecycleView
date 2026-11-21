@@ -11,7 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RecycleView">
-
         <activity
             android:name=".vistas.MainActivity"
             android:exported="true"
@@ -22,12 +21,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".registro"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-
+        <activity
+            android:name=".Actualizar"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

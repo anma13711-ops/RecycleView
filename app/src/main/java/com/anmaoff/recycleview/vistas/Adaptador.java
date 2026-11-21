@@ -1,6 +1,7 @@
 package com.anmaoff.recycleview.vistas;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.anmaoff.recycleview.Actualizar;
 import com.anmaoff.recycleview.R;
 
 import java.util.ArrayList;
@@ -60,6 +62,29 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.Vista> {
         holder.txtNombre.setText(nombre.get(position));
         holder.txtTelefono.setText(telefonos.get(position));
         holder.imgfoto.setImageResource(imagenes[position % imagenes.length]);
+
+        holder.fila.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int pos = holder.getAdapterPosition();
+                if (pos == RecyclerView.NO_POSITION) return;
+
+                // Evita el cierre si la fila no tiene datos de la base de datos
+                if (pos >= Clave.size()) return;
+
+                Intent intent = new Intent(context, Actualizar.class);
+
+                intent.putExtra("Clave", Clave.get(pos));
+                intent.putExtra("Name", Name.get(pos));
+                intent.putExtra("Cantidad", Cantidad.get(pos));
+                intent.putExtra("Precio", Precio.get(pos));
+                intent.putExtra("Categoria", Categoria.get(pos));
+                intent.putExtra("Descripcion", Descripcion.get(pos));
+                intent.putExtra("Responsable", Responsable.get(pos));
+
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

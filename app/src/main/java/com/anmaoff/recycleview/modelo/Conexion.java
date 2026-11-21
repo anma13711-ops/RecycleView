@@ -52,6 +52,23 @@ public class Conexion extends SQLiteOpenHelper {
 
     }
 
+    public boolean actualizar(producto producto) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("Name", producto.getName());
+        values.put("Cantidad", producto.getCantidad());
+        values.put("Precio", producto.getPrecio());
+        values.put("Categoria", producto.getCategoria());
+        values.put("Descripcion", producto.getDescripcion());
+        values.put("Responsable", producto.getResponsable());
+
+        int resultado = db.update("registro", values, "Clave = ?",
+                new String[]{String.valueOf(producto.getClave())});
+
+        return resultado > 0;
+    }
+
     public Cursor consultar() {
 
         String query = "Select * from registro";
